@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import TimerWidget from "./widgets/TimerWidget";
+import Editor from "./widgets/Editor";
+import DummyLine from "./widgets/DummyLine";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [running, setRunning] = useState(false);
+    const [defaultTime, setDefaultTime] = useState(0);
+    const [time, setTime] = useState(defaultTime);
+
+    return (
+        <div className="App">
+            <Editor running={running} setTime={setTime} defaultTime={defaultTime} setDefaultTime={setDefaultTime}/>
+            <TimerWidget running={running} setRunningState={setRunning} time={time} setTime={setTime}/>
+            <DummyLine running={running}/>
+        </div>
+    );
 }
 
 export default App;

@@ -1,38 +1,57 @@
+:root {
+    --col-primary: #000000;
+    --col-secondary: #FFFFFF;
+}
+
+.App, #root, html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .App {
-  text-align: center;
+    text-align: center;
+    color: var(--col-primary);
+    background-color: var(--col-secondary);
+    display: flex;
+    flex-direction: column;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.timer {
+    font-size: 30vw;
+    flex-grow: 4;
+    display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.editor {
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.invisible {
+    visibility: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.ui {
+    flex-grow: 3;
+    background-color: var(--col-primary);
+    color: var(--col-secondary);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.timer-value {
+    align-self: center;
+    margin: auto;
+}
+.btn{
+    width: 50px;
+    height: 50px;
+    background-color: var(--col-secondary);
+    color: var(--col-primary);
+    border: none;
+}
+.input{
+    width: 50px;
+    height: 50px;
+    background-color: var(--col-secondary);
+    color: var(--col-primary);
+    border: none;
 }
